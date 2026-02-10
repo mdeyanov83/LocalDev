@@ -9,8 +9,8 @@
             "path": "learning"
         },
         {
-            "name": "Complete FastAPI Masterclass",
-            "path": "complete_fastapi_masterclass"
+            "name": "FastAPI Masterclass",
+            "path": "fastapi_masterclass"
         },
     ],
 
