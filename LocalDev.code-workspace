@@ -9,11 +9,11 @@
             "path": "learning"
         },
         {
-            "name": "FastAPI",
-            "path": "fastapi"
+            "name": "Complete FastAPI Masterclass",
+            "path": "complete_fastapi_masterclass"
         },
     ],
-    
+
     "settings": {
 
     // Python settings

@@ -1,9 +1,17 @@
 # Git ignore file specific to multi-root devcontainer
-# Ignore all project folders, so that only configuration files are tracked
+# Ignore all folders
+/*
+
+# But do not ignore configuration folders and files
+!/.devcontainer/
+!/.vscode/
+!/LocalDev.code-workspace
+!/.gitignore
+!/README.md
 
 # Ignore project folders
-learning/
-fastapi/
+# learning/
+# complete_fastapi_masterclass/
 
 
 # --- OS Metadata ---
