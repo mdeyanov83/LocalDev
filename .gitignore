@@ -4,3 +4,8 @@
 # Ignore project folders
 learning/
 fastapi/
+
+
+# --- OS Metadata ---
+.DS_Store
+Thumbs.db
