@@ -1,0 +1,182 @@
+{
+    "name": "Multi-Language Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+
+    // Mount the parent WSL LocalDev folder to the container
+    "workspaceFolder": "/workspaces/LocalDev",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/LocalDev,type=bind",
+
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+              // AI Code
+                // "codeium.codeium",
+                // "wallabyjs.quokka-vscode",
+
+              // Python ecosystem
+                "ms-python.autopep8",
+                "ms-python.debugpy",
+                "ms-python.vscode-pylance",
+                "ms-python.python",
+                "ms-python.vscode-python-envs",
+                // "ms-python.black-formatter",
+
+              // Jupyter Notebooks
+                "ms-toolsai.jupyter",
+
+              // Java ecosystem
+                // "redhat.java",
+                // "vscjava.vscode-java-debug",
+
+              // Web development
+                // "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                // "bradlc.vscode-tailwindcss"
+
+              // Mobile development
+                //"dart-code.dart-code",
+                //"dart-code.flutter",
+
+              // Systems programming
+                "ms-vscode.cpptools",
+
+              // DevOps/Containers
+                "ms-azuretools.vscode-docker",
+                // "ms-azuretools.vscode-containers", // part of the "ms-azuretools.vscode-docker" extension pack
+                "docker.docker",
+
+              // Database/SQL
+                "inferrinizzard.prettier-sql-vscode",
+                // "mtxr.sqltools",
+
+              // Git/Version Control
+                "vsls-contrib.gitdoc",
+                //"github.vscode-pull-request-github",
+
+              // Utilities
+                "ms-vscode.hexeditor",
+                "mathematic.vscode-pdf",
+                "philfontaine.autolaunch",
+                "streetsidesoftware.code-spell-checker"
+            ],
+
+            "settings": {
+              // Python environment settings (container-specific)
+                "python.defaultInterpreterPath": "/opt/venv/bin/python",
+                "python.terminal.activateEnvironment": true,
+                "python.terminal.executeInFileDir": true, // default: false
+
+              // Java runtime configuration (container-specific)
+                "java.configuration.runtimes": [
+                  {
+                    "name": "JavaSE-17",
+                    "path": "/usr/lib/jvm/java-17-openjdk-amd64",
+                    "default": true
+                  }
+                ],
+                "java.home": "/usr/lib/jvm/java-17-openjdk-amd64",
+                "java.server.launchMode": "Standard",
+
+              // Terminal settings (Linux container-specific)
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "terminal.integrated.copyOnSelection": true,
+                "terminal.integrated.enableVisualBell": true,
+                "terminal.integrated.gpuAcceleration": "on",
+                "terminal.integrated.persistentSessionReviveProcess": "onExit", // default: "onExit"
+                // "terminal.integrated.sendKeybindingsToShell": true,
+                // "terminal.integrated.commandsToSkipShell": [
+                //   "workbench.action.toggleSidebarVisibility"
+                // ],
+                "terminal.integrated.shellIntegration.decorationsEnabled": "both", // default: "both"
+                // "terminal.integrated.shellIntegration.enabled": true,
+                "terminal.integrated.showExitAlert": true, // default: "true"
+                // "terminal.integrated.tabs.description": "${task}${separator}${local}",
+                // "terminal.integrated.tabs.showActiveTerminal": "always", // default: "singleTerminalOrNarrow"
+                "workbench.welcomePage.walkthroughs.openOnInstall": false,
+
+              // Git authentication (container-specific)
+                "git.terminalAuthentication": false,
+                "github.gitAuthentication": true,
+                // "github.codespaces.devcontainerChangedNotificationStyle": "notification", // default: "notification"
+
+              // GitDoc(extension) settings
+                "gitdoc.commitMessageFormat": "ccc, LLL d, kkkk, h:mm a ZZ",
+                "gitdoc.commitValidationLevel": "none",
+                "gitdoc.enabled": true,
+                "gitdoc.pullOnOpen": false,
+                "gitdoc.autoPull": "off",
+
+              // File watcher configuration (performance in containers)
+                "files.watcherExclude": {
+                    "**/.git/objects/**": true,
+                    "**/.git/subtree-cache/**": true,
+                    "**/node_modules/*/**": true,
+                    "**/.venv/**": true,
+                    "**/venv/**": true,
+                    "**/__pycache__/**": true,
+                    "**/.pytest_cache/**": true
+                },
+
+              // Port forwarding and remote-specific settings
+                "remote.autoForwardPorts": true, // default: true
+                "remote.autoForwardPortsFallback": 0, // default: 20
+                "remote.autoForwardPortsSource": "process", // default: "process"
+                "remote.otherPortsAttributes": {
+                    "onAutoForward": "silent"
+                }
+            }
+        }
+    },
+
+    "forwardPorts": [3000, 3001, 5000, 5173, 8000, 8080, 8888, 9000],
+    "mounts": [
+        {
+            "source": "/var/run/docker.sock",
+            "target": "/var/run/docker.sock",
+            "type": "bind"
+        },
+        // Optional: Mount host Git config (safer than hardcoding)
+        // Uncomment if you want to use host Git credentials must be set in WSL or Windows (if Hyper-V backend for Docker Desktop)
+        // {
+        //   "source": "${localEnv:HOME}/.gitconfig",
+        //   "target": "/home/vscode/.gitconfig",
+        //   "type": "bind"
+        // },
+
+        // Bind-mounts the X11 Unix socket directory from the WSL host.
+        {
+            "source": "/tmp/.X11-unix",
+            "target": "/tmp/.X11-unix",
+            "type": "bind"
+        }
+
+    ],
+
+    "remoteUser": "vscode",
+
+    // Features (alternative to manual installation in Dockerfile)
+    // "features": {
+    //     "ghcr.io/devcontainers/features/github-cli:1": {}
+    // }
+
+    "containerEnv": {
+        // "VIRTUAL_ENV": "/opt/venv", // Set in Dockerfile. If set here as well, (venv) will be reflected in the terminal prompt
+        // "PATH": "/opt/venv/bin:${containerEnv:PATH}", // Set in Dockerfile
+
+        "GITHUB_USERNAME": "mdeyanov83",
+        // "GITHUB_EMAIL": "put_email_here_if_want_to_use_public",
+        "GITHUB_NOREPLY_EMAIL": "184451874+mdeyanov83@users.noreply.github.com",
+        "GITHUB_REPO": "learning",
+
+        // "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}" // If GitHub token is set on host, otherwise prompted for it in postCreateCommand script
+
+        "DISPLAY": ":0" // Explicitly sets the DISPLAY to :0 to use the host's WSLg/X11 server
+    },
+
+
+    // Lifecycle hooks
+    "postCreateCommand": "bash .devcontainer/configure_devcontainer.sh"
+}

@@ -1,0 +1,6 @@
+# Git ignore file specific to multi-root devcontainer
+# Ignore all project folders, so that only configuration files are tracked
+
+# Ignore project folders
+learning/
+fastapi/
