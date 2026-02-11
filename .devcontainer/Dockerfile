@@ -1,5 +1,6 @@
 # Use Microsoft base devcontainer image
-FROM mcr.microsoft.com/devcontainers/base:ubuntu
+ARG BASE_IMAGE=mcr.microsoft.com/devcontainers/base:ubuntu
+FROM ${BASE_IMAGE}
 LABEL maintainer="Martin Deyanov <your.email@example.com>"
 
 # Set environment variables
@@ -88,4 +89,4 @@ RUN /opt/venv/bin/pip install --no-cache-dir --upgrade pip setuptools wheel \
         python-dotenv \
     && /opt/venv/bin/pip cache purge
 
-WORKDIR /home/vscode
+WORKDIR /workspaces/LocalDev

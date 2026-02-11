@@ -178,5 +178,5 @@
 
 
     // Lifecycle hooks
-    "postCreateCommand": "bash .devcontainer/configure_devcontainer.sh"
+    "postCreateCommand": "bash .devcontainer/configure_git_repo.sh"
 }
