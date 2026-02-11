@@ -4,11 +4,11 @@ set -euo pipefail
 echo "Setting up development environment..."
 
 ########################################
-# Prompt for GitHub token (add -s flag for secure input)
+# Prompt for GitHub token (secure input)
 ########################################
 if [ -z "${GITHUB_TOKEN:-}" ]; then
   echo
-  read -p "Enter your GitHub Token: " GITHUB_TOKEN
+  read -p "Enter your GitHub Personal Access Token: " GITHUB_TOKEN
   echo
 fi
 
@@ -41,20 +41,20 @@ git config --global pull.rebase false
 git config --global user.userConfigOnly true
 git config --global core.autocrlf input
 
-########################################
-# Authenticate GitHub CLI
-########################################
-if ! gh auth status >/dev/null 2>&1; then
-    echo "$GITHUB_TOKEN" | gh auth login --with-token
-fi
+# Configure credential helper BEFORE any network operations
+git config --global --unset-all credential.helper || true
+git config --global credential.helper store
 
-# Ensure Git uses GitHub CLI for HTTPS authentication
-gh auth setup-git
+########################################
+# Pre-approve credentials (fixes timing issue)
+########################################
+printf "protocol=https\nhost=github.com\nusername=%s\npassword=%s\n\n" \
+  "$GITHUB_USERNAME" "$GITHUB_TOKEN" | git credential approve
 
 ########################################
 # Repository setup
 ########################################
-REPO_DIR="/workspaces/LocalDev/$GITHUB_REPO"
+REPO_DIR="$GITHUB_REPO"
 REMOTE_URL="https://github.com/$GITHUB_USERNAME/$GITHUB_REPO.git"
 
 if [ -d "$REPO_DIR/.git" ]; then
@@ -63,7 +63,6 @@ if [ -d "$REPO_DIR/.git" ]; then
   git remote set-url origin "$REMOTE_URL"
 else
   echo "✅ Repository not found. Cloning..."
-  cd /workspaces/LocalDev
   git clone "$REMOTE_URL"
 fi
 
