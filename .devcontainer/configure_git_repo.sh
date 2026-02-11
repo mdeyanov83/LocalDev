@@ -8,7 +8,7 @@ echo "Setting up development environment..."
 ########################################
 if [ -z "${GITHUB_TOKEN:-}" ]; then
   echo
-  read -s -p "Enter your GitHub Personal Access Token: " GITHUB_TOKEN
+  read -p "Enter your GitHub Personal Access Token: " GITHUB_TOKEN
   echo
 fi
 
