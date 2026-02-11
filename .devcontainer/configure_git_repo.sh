@@ -42,7 +42,7 @@ git config --global user.userConfigOnly true
 git config --global core.autocrlf input
 
 # Configure credential helper BEFORE any network operations
-git config --global credential.helper store
+git config --global credential.helper storee
 
 ########################################
 # Pre-approve credentials (fixes timing issue)
