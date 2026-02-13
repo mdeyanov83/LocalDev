@@ -1,0 +1,11 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Fix GitDoc in settings.json Script",
+            "type": "shell",
+            "command": ".vscode/fix_gitdoc.sh",
+            "auto": true
+        }
+    ]
+}
