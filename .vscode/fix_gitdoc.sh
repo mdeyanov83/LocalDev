@@ -5,7 +5,7 @@ exec 1>/dev/null
 
 # sleep 1
 
-FILE=".vscode/settings.json"
+FILE="LocalDev.code-workspace"
 
 # Modify "gitdoc.enabled" to false
 sed -i 's/"gitdoc.enabled": true,/"gitdoc.enabled": false,/' "$FILE"
