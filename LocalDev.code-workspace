@@ -54,6 +54,7 @@
         // "notebook.lineNumbers": "on", // default: "off"
         "notebook.output.wordWrap": true, // default: false
 
+
     // Java settings
         // "[java]": {
         //   "editor.defaultFormatter": "google.java-format"
@@ -188,6 +189,10 @@
         "files.insertFinalNewline": true,
         "files.trimTrailingWhitespace": true,
         "files.eol": "\n",
+
+
+    // Port forwarding and remote-specific settings
+        "remote.restoreForwardedPorts": false,
 
 
     // Git settings + GitDoc
