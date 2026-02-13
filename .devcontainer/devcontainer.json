@@ -136,7 +136,7 @@
     "portsAttributes": {
         "3000": {
             "label": "React/Node Frontend",
-            "onAutoForward": "notify",
+            "onAutoForward": "notify"
         },
         "5000": {
             "label": "Flask Server",
