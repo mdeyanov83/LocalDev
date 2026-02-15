@@ -27,7 +27,7 @@
         // "python.linting.enabled": true,
         // "python.linting.pylintEnabled": true,
         // "python.languageServer": "Pylance", // default: "default" - pylance if available, if not - jedi
-        // "python.analysis.autoImportCompletions": true,
+        "python.analysis.autoImportCompletions": true, // default: false
         // "python.analysis.typeCheckingMode": "standard", // default: false
         "python.defaultInterpreterPath": "/opt/venv/bin/python",
         "python.terminal.activateEnvironment": false,
