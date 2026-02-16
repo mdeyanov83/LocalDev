@@ -82,7 +82,8 @@ RUN /opt/venv/bin/pip install --no-cache-dir --upgrade pip setuptools wheel \
     # Web frameworks (more suitable for project specific venv)
         flask django fastapi uvicorn websockets httpx \
     # Linting and formatting
-        # ruff black pylint \
+        ruff \
+        # black pylint \
 	# Development Tools
         mypy pytest pytest-cov \
 	# Utilities (system-wide venv)
