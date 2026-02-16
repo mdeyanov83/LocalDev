@@ -59,14 +59,12 @@
         "python.analysis.diagnosticMode":   "openFilesOnly", // default: "openFilesOnly" (Change the "diagnostic" mode to only analyze open files)
 
         "ruff.enable": true,
-        "ruff.configuration": 
-        "ruff.configuration": {
-            "format": {
-                "quote-style": "single"
-            }
-        },
-
-        // "/workspaces/LocalDev/.vscode/ruff.toml", // Use a global configuration file
+        // "ruff.configuration": "/path/to/configuration/ruff.toml" // can use a global configuration file, instead of inline JSON object
+        // "ruff.configuration": {
+        //     "format": {
+        //         "quote-style": "single"
+        //     }
+        // },
 
 
     // Jupyter Notebooks
