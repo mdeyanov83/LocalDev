@@ -58,10 +58,12 @@
                 //"github.vscode-pull-request-github",
 
               // Utilities
+                "philfontaine.autolaunch",
                 "ms-vscode.hexeditor",
                 "mathematic.vscode-pdf",
-                "philfontaine.autolaunch",
-                "streetsidesoftware.code-spell-checker"
+                "qwtel.sqlite-viewer",
+                "streetsidesoftware.code-spell-checker",
+                "aaron-bond.better-comments"
             ],
 
             "settings": {
