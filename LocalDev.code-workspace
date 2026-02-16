@@ -195,7 +195,7 @@
             "comments": false,
             "strings": false
         },
-        "editor.quickSuggestionsDelay": 10,
+        "editor.quickSuggestionsDelay": 10, // default: 10
         "editor.acceptSuggestionOnEnter": "off",
         // "editor.suggestOnTriggerCharacters": false,
 
