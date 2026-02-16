@@ -62,8 +62,7 @@
                 "ms-vscode.hexeditor",
                 "mathematic.vscode-pdf",
                 "qwtel.sqlite-viewer",
-                "streetsidesoftware.code-spell-checker",
-                "aaron-bond.better-comments"
+                "streetsidesoftware.code-spell-checker"
             ],
 
             "settings": {
