@@ -81,8 +81,10 @@ RUN /opt/venv/bin/pip install --no-cache-dir --upgrade pip setuptools wheel \
         requests beautifulsoup4 \
     # Web frameworks (more suitable for project specific venv)
         flask django fastapi uvicorn websockets httpx \
+    # Linting and formatting
+        # ruff black pylint \
 	# Development Tools
-        black pylint mypy pytest pytest-cov \
+        mypy pytest pytest-cov \
 	# Utilities (system-wide venv)
         tqdm pip-tools pillow \
     # Utilities (more suitable for project specific venv)

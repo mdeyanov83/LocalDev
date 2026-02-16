@@ -17,37 +17,47 @@
     "settings": {
 
     // Python settings
+        // "[python]": {
+        //     "editor.defaultFormatter": "ms-python.autopep8",
+        //     "editor.formatOnSave": true,
+        //     "editor.codeActionsOnSave": {
+        //         "source.organizeImports": "explicit"
+        //     },
+        // },
         "[python]": {
-            "editor.defaultFormatter": "ms-python.autopep8",
+            "editor.defaultFormatter": "charliermarsh.ruff",
             "editor.formatOnSave": true,
             "editor.codeActionsOnSave": {
-                "source.organizeImports": "explicit"
-            },
+                // This replaces your "organizeImports" and runs it via Ruff
+                "source.fixAll.ruff": "explicit",
+                "source.organizeImports.ruff": "explicit"
+            }
         },
-        // "python.linting.enabled": true,
-        // "python.linting.pylintEnabled": true,
-        // "python.languageServer": "Pylance", // default: "default" - pylance if available, if not - jedi
-        "python.analysis.autoImportCompletions": true, // default: false
-        // "python.analysis.typeCheckingMode": "standard", // default: false
         "python.defaultInterpreterPath": "/opt/venv/bin/python",
+        // "python.languageServer": "Pylance", // default: "default" - pylance if available, if not - jedi
         "python.terminal.activateEnvironment": false,
         "python.terminal.launchArgs": [],
         "python.terminal.executeInFileDir": true,
 
         "autoDocstring.docstringFormat": "google", // default: "google" - autoDocstring extension default format
 
-        // Pylnce optimization:
-        // 1. Disable indexing of third-party libraries for auto-imports
-        "python.analysis.indexing": false,
-        // 2. Tell Pylance to ignore specific heavy folders
-        "python.analysis.exclude": [
+
+        // Pylance optimization:
+        // "python.analysis.typeCheckingMode": "standard", // default: "off"
+        "python.analysis.autoImportCompletions": false, // default: false (significant performance impact on intellisense when enabled)
+        "python.analysis.indexing": false, // default: true (Disable indexing of third-party libraries for auto-imports)
+        "python.analysis.exclude": [ // Ignore specific heavy folders
             "**/node_modules",
-            "**/site-packages"
+            "**/__pycache__",
+            "**/site-packages",
+            "**/.venv",
+            "**/build",
+            "**/dist"
         ],
-        // 3. Set the analysis limit (helps with CPU spikes)
-        "python.analysis.userFileIndexingLimit": 2000,
-        // 4. Change the "diagnostic" mode to only analyze open files
-        "python.analysis.diagnosticMode": "openFilesOnly",
+        "python.analysis.ignore": ["*"], // let Ruff handle errors
+        "ruff.enable": true,
+        "python.analysis.userFileIndexingLimit": 2000, // default: 200 (Set the analysis limit - helps with CPU spikes)
+        "python.analysis.diagnosticMode":   "openFilesOnly", // default: "openFilesOnly" (Change the "diagnostic" mode to only analyze open files)
 
 
     // Jupyter Notebooks
@@ -57,31 +67,38 @@
 
     // Java settings
         // "[java]": {
-        //   "editor.defaultFormatter": "google.java-format"
+        //     "editor.defaultFormatter": "google.java-format"
         // },
         // "java.debug.settings.enableRunDebugCodeLens": false,
         // "java.inlayHints.parameterNames.enabled": "none",
 
     // JavaScript/TypeScript settings
         "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
+            "editor.defaultFormatter": "esbenp.prettier-vscode",
+            "editor.formatOnSave": true
         },
         "javascript.suggest.enabled": true,
         // "javascript.validate.enable": true, // defulat: true
         // "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false, // default: true
         "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
+            "editor.defaultFormatter": "esbenp.prettier-vscode",
+            "editor.formatOnSave": true
         },
 
     // JSON/YAML settings
         "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
         "[yaml]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
+
+    // SQL settings
+        "[SQL]": {
+            "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+        },
+        "Prettier-SQL.keywordCase": "upper", // default: "preserve"
+
 
     // C_C++ settings
         "C_Cpp.formatting": "clangFormat",
@@ -114,7 +131,7 @@
         "html.autoCreateQuotes": true,
         // "html.suggest.html5": false,  // suggest only basic HTML tags (no HTML5 specific)
 
-        "Prettier-SQL.keywordCase": "upper",
+
         // "dart.showMainCodeLens": true, // default: true
 
 
@@ -172,12 +189,17 @@
             "strings": false
         },
         "editor.quickSuggestionsDelay": 10,
+        "editor.acceptSuggestionOnEnter": "off",
         // "editor.suggestOnTriggerCharacters": false,
-        // "editor.tabCompletion": "off",
+
+        // "editor.tabCompletion": "on", // default off (these should work together, but seem to have no effect)
+        // "editor.suggest.showSnippets": true, // default true (these should work together, but seem to have no effect)
+
         "editor.parameterHints.enabled": true,
         "editor.suggest.selectionMode": "always", // default "always"
         "editor.suggest.showStatusBar": true,
-        "editor.acceptSuggestionOnEnter": "off",
+        // "editor.suggest.snippetsPreventQuickSuggestions": false, // default "false"
+        "editor.suggest.localityBonus": true,
 
 
     // File management preferences
@@ -263,6 +285,10 @@
             "mynotes",
             "pubspec"
         ],
+
+
+    // Other
+        "prettier.useEditorConfig": false, // default: true (Reduce noise in Output console, due to missing local configuration files)
 
 
     // Temporary pytest configuration for current project

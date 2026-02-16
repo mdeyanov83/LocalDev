@@ -17,7 +17,8 @@
                 // "wallabyjs.quokka-vscode",
 
               // Python ecosystem
-                "ms-python.autopep8",
+                // "ms-python.autopep8", // replaced by Ruff
+                "charliermarsh.ruff",
                 "ms-python.debugpy",
                 "ms-python.vscode-pylance",
                 "ms-python.python",
