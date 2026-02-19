@@ -30,6 +30,21 @@
                 "${command:pickArgs}"
             ],
             "cwd": "${fileDirname}",
+        },
+
+        {
+            "name": "Python Debugger: FastAPI",
+            "type": "debugpy",
+            "request": "launch",
+            "console":"integratedTerminal",
+            "module": "uvicorn",
+            "args": [
+                "main:app",
+                "--reload"
+            ],
+            "jinja": true,
+            "justMyCode": true
         }
+
     ]
 }
