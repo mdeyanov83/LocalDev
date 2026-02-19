@@ -42,6 +42,7 @@
                 "main:app",
                 "--reload"
             ],
+            "cwd": "${fileDirname}",
             "jinja": true,
             "justMyCode": true
         }
