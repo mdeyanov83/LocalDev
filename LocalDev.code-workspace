@@ -73,10 +73,12 @@
                     "E",     // Pycodestyle errors
                     "F"      // Pyflakes
                 ],
+                "unfixable": ["F401"],  // Prevent Ruff from fixing "unused imports", only warn about them (F401 rule from Pyflakes)
                 "ignore": [],
                 "isort": {
                     "combine-as-imports": true,
                     "force-single-line": false
+
                 }
             }
 
