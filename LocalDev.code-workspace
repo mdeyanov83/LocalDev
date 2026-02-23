@@ -99,23 +99,46 @@
     // JavaScript/TypeScript settings
         "[javascript]": {
             "editor.defaultFormatter": "esbenp.prettier-vscode",
-            "editor.formatOnSave": true
+            "editor.formatOnSave": true,
+            "prettier.singleQuote": true  // default: false
         },
         "javascript.suggest.enabled": true,
-        // "javascript.validate.enable": true, // defulat: true
+        // "javascript.validate.enable": true, // default: true
         // "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false, // default: true
         "[typescript]": {
             "editor.defaultFormatter": "esbenp.prettier-vscode",
-            "editor.formatOnSave": true
+            "editor.formatOnSave": true,
+            "prettier.singleQuote": true  // default: false
         },
 
-    // JSON/YAML settings
+
+    // HTML
+        "html.format.indentInnerHtml": true,  // this setting is from the built-in VS Code HTML formatter. Change it switch to Prettier
+        "html.autoClosingTags": true,
+        "html.autoCreateQuotes": true,
+        "html.suggest.html5": false,  // default: true // suggest only basic HTML tags (no HTML5 specific)
+        
+
+    // CSS
+        "[css]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode",
+        },
+
+    // JSON/YAML/TOML settings
         "[json]": {
             "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[jsonc]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode",
+            "prettier.tabWidth": 4  // default: 2
         },
         "[yaml]": {
             "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
+        // "[toml]": {
+
+        // },
+
 
     // SQL settings
         "[SQL]": {
@@ -135,6 +158,7 @@
         // "C_Cpp.dimInactiveRegions": false,
         // "C_Cpp.doxygen.generateOnType": false,
 
+
     // Dart/Flutter settings
         // "dart.lineLength": 80,
         // "[dart]": {
@@ -148,15 +172,16 @@
         // "dart.previewFlutterUiGuides": true,  // Experimental
         // "dart.previewFlutterUiGuidesCustomTracking": true,  // Experimental
         // "dart.closingLabels": true,
+        // "dart.showMainCodeLens": true, // default: true
+
 
     // Language-specific preferences (other)
-        "html.format.indentInnerHtml": true,
-        "html.autoClosingTags": true,
-        "html.autoCreateQuotes": true,
-        // "html.suggest.html5": false,  // suggest only basic HTML tags (no HTML5 specific)
 
 
-        // "dart.showMainCodeLens": true, // default: true
+    // Global formatting
+        "prettier.useEditorConfig": false, // default: true (Reduce noise in Output console, due to missing local configuration files)
+        "prettier.tabWidth": 4,  // default: 2
+        "prettier.singleQuote": true,  // default: false
 
 
     // Codeium / Windsurf (extension)
@@ -309,10 +334,6 @@
             "mynotes",
             "pubspec"
         ],
-
-
-    // Other
-        "prettier.useEditorConfig": false, // default: true (Reduce noise in Output console, due to missing local configuration files)
 
 
     // Temporary pytest configuration for current project
