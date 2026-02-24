@@ -80,7 +80,6 @@
                 //     "force-single-line": false  // default: false
                 // }
             }
-
         },
 
 
@@ -117,7 +116,7 @@
         "html.autoClosingTags": true,
         "html.autoCreateQuotes": true,
         "html.suggest.html5": false,  // default: true // suggest only basic HTML tags (no HTML5 specific)
-        
+
 
     // CSS
         "[css]": {
@@ -281,10 +280,13 @@
 
 
     // Basic UI preferences
+
         "diffEditor.diffAlgorithm": "advanced",
         // "diffEditor.ignoreTrimWhitespace": false, // default: true
         "explorer.compactFolders": false, // default: true
+        // "explorer.fileNesting.enabled": true,  // default: false  // nesting of grouped files as if in a folder. See: "explorer.fileNesting.patterns" (in local User settings)
         "explorer.autoOpenDroppedFile": false, // default: true
+
         "window.autoDetectColorScheme": true,
         "workbench.editor.closeOnFileDelete": true,
         "workbench.editor.enablePreview": false,
@@ -310,7 +312,6 @@
             // "editorBracketMatch.background": "default"
         },
         "workbench.settings.alwaysShowAdvancedSettings": true,
-
 
 
     // Terminal Settings
