@@ -61,9 +61,9 @@
         "ruff.enable": true,
         // "ruff.configuration": "/path/to/configuration/ruff.toml" // can use a global configuration file, instead of inline JSON object
         "ruff.configuration": {
-            // "format": {
-            //     "quote-style": "single"
-            // },
+            "format": {
+                "quote-style": "single"
+            },
 
             // "src": ["."], // This tells Ruff that your project code starts at the root, for separating local imports vs 3rd libraries. // Doesn't work byitself, as it cannot anchor where the project root is.
             // "src": ["src"] // This is the "proper" way. Place all source code in src/ and install local project via "pip install -e ." in editable mode.
