@@ -33,7 +33,7 @@
                 "source.organizeImports.ruff": "explicit"
             }
         },
-        "python.useEnvironmentsExtension": true,
+        // "python.useEnvironmentsExtension": true, // default: false // breaks "python.terminal.activateEnvironment": true,
         "python.defaultInterpreterPath": "/opt/venv/bin/python",
         // "python.languageServer": "Pylance", // default: "default" - pylance if available, if not - jedi
         "python.terminal.activateEnvironment": false,
