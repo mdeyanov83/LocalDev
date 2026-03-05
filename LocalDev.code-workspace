@@ -33,6 +33,7 @@
                 "source.organizeImports.ruff": "explicit"
             }
         },
+        "python.useEnvironmentsExtension": true,
         "python.defaultInterpreterPath": "/opt/venv/bin/python",
         // "python.languageServer": "Pylance", // default: "default" - pylance if available, if not - jedi
         "python.terminal.activateEnvironment": false,
@@ -101,9 +102,9 @@
             "editor.formatOnSave": true,
             "prettier.singleQuote": true  // default: false
         },
-        "javascript.suggest.enabled": true,
-        // "javascript.validate.enable": true, // default: true
-        // "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false, // default: true
+        // "js/ts.suggest.enabled": true, // default: true
+        // "js/ts.validate.enabled": true, // default: true
+        // "js/ts.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false, // default: true
         "[typescript]": {
             "editor.defaultFormatter": "esbenp.prettier-vscode",
             "editor.formatOnSave": true,
@@ -288,6 +289,12 @@
         "explorer.autoOpenDroppedFile": false, // default: true
 
         "window.autoDetectColorScheme": true,
+
+        // Experimental
+        // "workbench.editor.useModal": "all", // default: "off"
+        // "extensions.allowOpenInModalEditor": true, // default: false
+
+
         "workbench.editor.closeOnFileDelete": true,
         "workbench.editor.enablePreview": false,
         "workbench.editorAssociations": {
@@ -303,7 +310,6 @@
         "workbench.editor.labelFormat": "default",
         "workbench.startupEditor": "none",
         "workbench.tips.enabled": true,
-        "chat.disableAIFeatures": true,
 
         "workbench.colorCustomizations": {
             "editorBracketMatch.foreground":"#ff0000",
@@ -312,6 +318,16 @@
             // "editorBracketMatch.background": "default"
         },
         "workbench.settings.alwaysShowAdvancedSettings": true,
+
+
+    // AI features
+        "chat.disableAIFeatures": true,
+        // "github.copilot.enable": {
+        //     "*": false,
+        //     "plaintext": false,
+        //     "markdown": false,
+        //     "scminput": false
+        // },
 
 
     // Terminal Settings
