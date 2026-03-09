@@ -135,7 +135,7 @@
         }
     },
 
-    "forwardPorts": [3000, 5000, 5173, 8000, 8080, 8888],
+    "forwardPorts": [3000, 5000, 5173, 5432, 8000, 8080, 8888],
     "portsAttributes": {
         "3000": {
             "label": "React/Node Frontend",
@@ -147,6 +147,10 @@
         },
         "5173": {
             "label": "Vite/Flutter Web",
+            "onAutoForward": "notify"
+        },
+        "5432": {
+            "label": "PostgreSQL Server",
             "onAutoForward": "notify"
         },
         "8000": {
