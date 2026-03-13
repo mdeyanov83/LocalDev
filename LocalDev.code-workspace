@@ -33,10 +33,22 @@
                 "source.organizeImports.ruff": "explicit"
             }
         },
+
+        // "python.experiments.optOutFrom": [
+        //     // // "pythonTerminalEnvVarActivation",
+        //     // "All",
+        // ],
+        "python.experiments.optInto": [
+            "pythonTerminalEnvVarActivation"
+        ],
         // "python.useEnvironmentsExtension": true, // default: false // breaks "python.terminal.activateEnvironment": true,
+
+        // "python.terminal.activateEnvironment": true,  // default: true
+        // "python.terminal.activateEnvInCurrentTerminal": true,
         "python.defaultInterpreterPath": "/opt/venv/bin/python",
+
         // "python.languageServer": "Pylance", // default: "default" - pylance if available, if not - jedi
-        "python.terminal.activateEnvironment": false,
+
         "python.terminal.launchArgs": [],
         "python.terminal.executeInFileDir": true,
 
@@ -138,7 +150,9 @@
         // "[toml]": {
 
         // },
+        // "json.schemas": [
 
+        // ],
 
     // SQL settings
         "[SQL]": {
@@ -204,7 +218,7 @@
         "editor.folding": true,
         "editor.foldingHighlight": true,
 
-        "editor.hover.enabled": "on",
+        // "editor.hover.enabled": "on", // default: "on"
         "editor.lightbulb.enabled": "onCode",
         // "editor.codeLens": true, // default: true
         "editor.occurrencesHighlight": "off",
@@ -262,7 +276,30 @@
         "files.eol": "\n",
 
 
+    // Explorer settings
+        "explorer.compactFolders": false, // default: true
+        "explorer.autoOpenDroppedFile": false, // default: true
+        // "explorer.confirmDelete": true, // default: true
+
+        // "explorer.fileNesting.enabled": true,  // default: false  // nesting of grouped files as if in a folder
+        // "explorer.fileNesting.patterns": {
+        //     "*.ts": "${capture}.js",
+        //     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+        //     "*.jsx": "${capture}.js",
+        //     "*.tsx": "${capture}.ts",
+        //     "tsconfig.json": "tsconfig.*.json",
+        //     "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
+        //     "*.sqlite": "${capture}.${extname}-*",
+        //     "*.db": "${capture}.${extname}-*",
+        //     "*.sqlite3": "${capture}.${extname}-*",
+        //     "*.db3": "${capture}.${extname}-*",
+        //     "*.sdb": "${capture}.${extname}-*",
+        //     "*.s3db": "${capture}.${extname}-*"
+        // },
+
+
     // Port forwarding and remote-specific settings
+        "remote.autoForwardPortsSource": "hybrid",
         "remote.restoreForwardedPorts": false,
 
 
@@ -281,28 +318,31 @@
 
 
     // Basic UI preferences
+        // "workbench.colorTheme": "GitHub Dark Default",
+        // "workbench.iconTheme": "vs-minimal", // default "vs-seti"
+        "workbench.preferredDarkColorTheme": "GitHub Dark Default",
+        "workbench.preferredLightColorTheme": "GitHub Light Default",
+        "window.autoDetectColorScheme": true,
+        "workbench.colorCustomizations": {
+            "editorBracketMatch.foreground":"#ff0000",
+            // "editorBracketMatch.foreground":"#ff0000",
+            // "editorBracketMatch.border": "default",
+            // "editorBracketMatch.background": "default"
+        },
 
         "diffEditor.diffAlgorithm": "advanced",
         // "diffEditor.ignoreTrimWhitespace": false, // default: true
-        "explorer.compactFolders": false, // default: true
-        // "explorer.fileNesting.enabled": true,  // default: false  // nesting of grouped files as if in a folder. See: "explorer.fileNesting.patterns" (in local User settings)
-        "explorer.autoOpenDroppedFile": false, // default: true
-
-        "window.autoDetectColorScheme": true,
 
         // Experimental
         // "workbench.editor.useModal": "all", // default: "off"
         // "extensions.allowOpenInModalEditor": true, // default: false
-
 
         "workbench.editor.closeOnFileDelete": true,
         "workbench.editor.enablePreview": false,
         "workbench.editorAssociations": {
             "*.wav": "vscode.audioPreview"
         },
-        // "workbench.iconTheme": "vs-minimal", // default "vs-seti"
-        "workbench.preferredDarkColorTheme": "GitHub Dark Default",
-        "workbench.preferredLightColorTheme": "GitHub Light Default",
+
         "workbench.statusBar.visible": true,
         // "workbench.layoutControl.enabled": false,
         // "window.commandCenter": false,
@@ -311,12 +351,6 @@
         "workbench.startupEditor": "none",
         "workbench.tips.enabled": true,
 
-        "workbench.colorCustomizations": {
-            "editorBracketMatch.foreground":"#ff0000",
-            // "editorBracketMatch.foreground":"#ff0000",
-            // "editorBracketMatch.border": "default",
-            // "editorBracketMatch.background": "default"
-        },
         "workbench.settings.alwaysShowAdvancedSettings": true,
 
 
@@ -335,7 +369,7 @@
         "terminal.integrated.cursorBlinking": true,
         "terminal.integrated.copyOnSelection": true,
         "terminal.integrated.shellIntegration.enabled": true,
-        "terminal.integrated.suggest.enabled": false,
+        "terminal.integrated.suggest.enabled": false,  // Terminal inline suggestions
         // "terminal.integrated.cwd": "/workspaces/LocalDev",
 
 
@@ -365,6 +399,7 @@
         // "testing.coverageToolbarEnabled": true,
 
 
-    }
 
+
+    }
 }
