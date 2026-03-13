@@ -2,7 +2,7 @@
     "folders": [
         {
             "name": "ROOT (Config)",
-            "path": "."
+            "path": ".",
         },
         {
             "name": "Learning",
@@ -29,8 +29,8 @@
             "editor.formatOnSave": true,
             "editor.codeActionsOnSave": {
                 // This replaces your "organizeImports" and runs it via Ruff
+                "source.organizeImports.ruff": "explicit",
                 "source.fixAll.ruff": "explicit",
-                "source.organizeImports.ruff": "explicit"
             }
         },
 
@@ -43,7 +43,7 @@
         ],
         // "python.useEnvironmentsExtension": true, // default: false // breaks "python.terminal.activateEnvironment": true,
 
-        // "python.terminal.activateEnvironment": true,  // default: true
+        // "python.terminal.activateEnvironment": false,  // default: true
         // "python.terminal.activateEnvInCurrentTerminal": true,
         "python.defaultInterpreterPath": "/opt/venv/bin/python",
 
@@ -53,7 +53,6 @@
         "python.terminal.executeInFileDir": true,
 
         "autoDocstring.docstringFormat": "google", // default: "google" - autoDocstring extension default format
-
 
         // Pylance optimization:
         // "python.analysis.typeCheckingMode": "standard", // default: "off"
@@ -108,6 +107,7 @@
         // "java.debug.settings.enableRunDebugCodeLens": false,
         // "java.inlayHints.parameterNames.enabled": "none",
 
+
     // JavaScript/TypeScript settings
         "[javascript]": {
             "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -136,6 +136,7 @@
             "editor.defaultFormatter": "esbenp.prettier-vscode",
         },
 
+
     // JSON/YAML/TOML settings
         "[json]": {
             "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -154,6 +155,7 @@
 
         // ],
 
+
     // SQL settings
         "[SQL]": {
             "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
@@ -162,9 +164,9 @@
 
 
     // C_C++ settings
-        "C_Cpp.formatting": "clangFormat",
-        "C_Cpp.clang_format_fallbackStyle": "{ AllowShortFunctionsOnASingleLine: Empty, BraceWrapping: { AfterCaseLabel: true, AfterControlStatement: true, AfterFunction: true, AfterStruct: true, BeforeElse: true, BeforeWhile: true }, BreakBeforeBraces: Custom, ColumnLimit: 100, IndentCaseLabels: true, IndentWidth: 4, SpaceAfterCStyleCast: true, TabWidth: 4 }",
-        "C_Cpp.enhancedColorization": "enabled",
+        // "C_Cpp.formatting": "clangFormat",
+        // "C_Cpp.clang_format_fallbackStyle": "{ AllowShortFunctionsOnASingleLine: Empty, BraceWrapping: { AfterCaseLabel: true, AfterControlStatement: true, AfterFunction: true, AfterStruct: true, BeforeElse: true, BeforeWhile: true }, BreakBeforeBraces: Custom, ColumnLimit: 100, IndentCaseLabels: true, IndentWidth: 4, SpaceAfterCStyleCast: true, TabWidth: 4 }",
+        // "C_Cpp.enhancedColorization": "enabled",
         // "C_Cpp.autocomplete": "disabled",
         // "C_Cpp.debugShortcut": false,
         // "C_Cpp.errorSquiggles": "disabled",
@@ -225,17 +227,15 @@
         "editor.selectionHighlight": true,
 
         // "editor.renderWhitespace": "selection", // default: "selection"
-
         "editor.stickyScroll.enabled": true,
-
         // "editor.mouseWheelZoom": true, // default: true
         "editor.smoothScrolling": true,
         "editor.cursorBlinking": "smooth",
         // "editor.cursorStyle": "block-outline",
         // "editor.cursorSmoothCaretAnimation": "on",
+
         "editor.tabSize": 4,
         "editor.insertSpaces": true,
-
         "editor.fontSize": 14, // default: 14
 
         "breadcrumbs.enabled": true,
@@ -251,17 +251,17 @@
             "comments": false,
             "strings": false
         },
-        "editor.quickSuggestionsDelay": 10, // default: 10
-        "editor.acceptSuggestionOnEnter": "off",
+        "editor.quickSuggestionsDelay": 10,  // default: 10
+        "editor.acceptSuggestionOnEnter": "off",  // Ignore suggestions on press Enter
         // "editor.suggestOnTriggerCharacters": false,
 
-        // "editor.tabCompletion": "on", // default off (these should work together, but seem to have no effect)
-        // "editor.suggest.showSnippets": true, // default true (these should work together, but seem to have no effect)
+        // "editor.tabCompletion": "on",  // default: "off" (these should work together, but seem to have no effect)
+        // "editor.suggest.showSnippets": true,  // default: true (these should work together, but seem to have no effect)
 
         "editor.parameterHints.enabled": true,
-        "editor.suggest.selectionMode": "always", // default "always"
+        "editor.suggest.selectionMode": "always",  // default "always"
         "editor.suggest.showStatusBar": true,
-        // "editor.suggest.snippetsPreventQuickSuggestions": false, // default "false"
+        // "editor.suggest.snippetsPreventQuickSuggestions": false,  // default: false
         "editor.suggest.localityBonus": true,
 
 
@@ -277,11 +277,11 @@
 
 
     // Explorer settings
-        "explorer.compactFolders": false, // default: true
-        "explorer.autoOpenDroppedFile": false, // default: true
-        // "explorer.confirmDelete": true, // default: true
+        "explorer.compactFolders": false,  // default: true
+        "explorer.autoOpenDroppedFile": false,  // default: true
+        // "explorer.confirmDelete": true,  // default: true
 
-        // "explorer.fileNesting.enabled": true,  // default: false  // nesting of grouped files as if in a folder
+        // "explorer.fileNesting.enabled": true,  // default: false // nesting of grouped files as if in a folder
         // "explorer.fileNesting.patterns": {
         //     "*.ts": "${capture}.js",
         //     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
@@ -324,18 +324,19 @@
         "workbench.preferredLightColorTheme": "GitHub Light Default",
         "window.autoDetectColorScheme": true,
         "workbench.colorCustomizations": {
+            "list.hoverBackground": "#242424",
             "editorBracketMatch.foreground":"#ff0000",
             // "editorBracketMatch.foreground":"#ff0000",
             // "editorBracketMatch.border": "default",
             // "editorBracketMatch.background": "default"
+
         },
+        // "workbench.tree.enableStickyScroll": true,  // default: true
+        "workbench.tree.indent": 12,
+        "workbench.tree.renderIndentGuides": "always",  // default: "onHover"
 
         "diffEditor.diffAlgorithm": "advanced",
-        // "diffEditor.ignoreTrimWhitespace": false, // default: true
-
-        // Experimental
-        // "workbench.editor.useModal": "all", // default: "off"
-        // "extensions.allowOpenInModalEditor": true, // default: false
+        // "diffEditor.ignoreTrimWhitespace": false,  // default: true
 
         "workbench.editor.closeOnFileDelete": true,
         "workbench.editor.enablePreview": false,
@@ -344,14 +345,18 @@
         },
 
         "workbench.statusBar.visible": true,
-        // "workbench.layoutControl.enabled": false,
-        // "window.commandCenter": false,
+        // "workbench.layoutControl.enabled": false,  // default: true
+        // "window.commandCenter": false,  // default: true
         "workbench.list.smoothScrolling": true,
         "workbench.editor.labelFormat": "default",
         "workbench.startupEditor": "none",
         "workbench.tips.enabled": true,
 
         "workbench.settings.alwaysShowAdvancedSettings": true,
+
+        // Experimental
+        // "workbench.editor.useModal": "all", // default: "off"
+        // "extensions.allowOpenInModalEditor": true,  // default: false
 
 
     // AI features
@@ -376,14 +381,7 @@
     // Code Spell Checker extension
         "cSpell.enabled": false,
         "cSpell.words": [
-            "appbar",
-            "AUTOINCREMENT",
-            "Cupertino",
-            "firestore",
-            "flutterfire",
-            "gradlew",
-            "mynotes",
-            "pubspec"
+
         ],
 
 
@@ -397,8 +395,6 @@
         // "python.testing.unittestEnabled": false,
         // "python.testing.pytestEnabled": true,
         // "testing.coverageToolbarEnabled": true,
-
-
 
 
     }
