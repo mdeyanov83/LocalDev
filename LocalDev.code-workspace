@@ -44,7 +44,7 @@
         // "python.useEnvironmentsExtension": true, // default: false // breaks "python.terminal.activateEnvironment": true,
 
         // "python.terminal.activateEnvironment": false,  // default: true
-        // "python.terminal.activateEnvInCurrentTerminal": true,
+        // "python.terminal.activateEnvInCurrentTerminal": true,  // default: false
         "python.defaultInterpreterPath": "/opt/venv/bin/python",
 
         // "python.languageServer": "Pylance", // default: "default" - pylance if available, if not - jedi
