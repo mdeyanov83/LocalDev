@@ -299,7 +299,7 @@
 
 
     // Port forwarding and remote-specific settings
-        "remote.autoForwardPortsSource": "hybrid",
+        "remote.autoForwardPortsSource": "process",  // default: "process", but "hybrid" used to work prior to v1.111.0
         "remote.restoreForwardedPorts": false,
 
 
@@ -395,6 +395,23 @@
         // "python.testing.unittestEnabled": false,
         // "python.testing.pytestEnabled": true,
         // "testing.coverageToolbarEnabled": true,
+
+    // Theme modifications
+
+        // Italic function parameters
+        "editor.tokenColorCustomizations": {
+            "textMateRules": [
+                {
+                    "scope": [
+                        "variable.parameter",
+                        "variable.other.declaration.parameter"
+                    ],
+                    "settings": {
+                        "fontStyle": "italic"
+                    }
+                }
+            ]
+        }
 
 
     }
