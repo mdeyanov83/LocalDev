@@ -244,6 +244,21 @@
         // "problems.visibility": true, // default: true,
         // "problems.decorations.enabled": true, // default: true
 
+        "editor.tokenColorCustomizations": {  // Italic function parameters
+            "textMateRules": [
+                {
+                    "scope": [
+                        "variable.parameter",
+                        "variable.other.declaration.parameter"
+                    ],
+                    "settings": {
+                        "fontStyle": "italic"
+                    }
+                }
+            ]
+        },
+
+
 
     // Editor Quick Suggestions
         "editor.quickSuggestions": {
@@ -346,6 +361,7 @@
 
         "workbench.statusBar.visible": true,
         // "workbench.layoutControl.enabled": false,  // default: true
+        // "workbench.browser.showInTitleBar": true,  // default: "whenOpen"  // Show browser icon in top right
         // "window.commandCenter": false,  // default: true
         "workbench.list.smoothScrolling": true,
         "workbench.editor.labelFormat": "default",
@@ -395,23 +411,6 @@
         // "python.testing.unittestEnabled": false,
         // "python.testing.pytestEnabled": true,
         // "testing.coverageToolbarEnabled": true,
-
-    // Theme modifications
-
-        // Italic function parameters
-        "editor.tokenColorCustomizations": {
-            "textMateRules": [
-                {
-                    "scope": [
-                        "variable.parameter",
-                        "variable.other.declaration.parameter"
-                    ],
-                    "settings": {
-                        "fontStyle": "italic"
-                    }
-                }
-            ]
-        }
 
 
     }
