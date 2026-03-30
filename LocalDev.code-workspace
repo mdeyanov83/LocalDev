@@ -329,7 +329,7 @@
         "git.confirmSync": false,
         // "git.decorations.enabled": true, // default: true
         // "scm.diffDecorations":"all", // default: "all"
-        "gitdoc.enabled": true,
+        "gitdoc.enabled": false,
 
 
     // Accessibility settings

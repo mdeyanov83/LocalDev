@@ -5,7 +5,7 @@
             "label": "Toggle GitDoc in LocalDev.code-workspace",
             "type": "shell",
             "command": ".vscode/fix_gitdoc.sh",
-            "auto": true
+            // "auto": true
         }
     ]
 }
