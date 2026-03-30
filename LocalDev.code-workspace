@@ -139,14 +139,16 @@
 
     // JSON/YAML/TOML settings
         "[json]": {
-            "editor.defaultFormatter": "esbenp.prettier-vscode"
+            "editor.defaultFormatter": "esbenp.prettier-vscode",
+            "prettier.tabWidth": 2
         },
         "[jsonc]": {
             "editor.defaultFormatter": "esbenp.prettier-vscode",
-            "prettier.tabWidth": 4  // default: 2
+            "prettier.tabWidth": 2  // default: 2
         },
         "[yaml]": {
-            "editor.defaultFormatter": "esbenp.prettier-vscode"
+            "editor.defaultFormatter": "esbenp.prettier-vscode",
+            "prettier.tabWidth": 2
         },
         // "[toml]": {
 
@@ -154,6 +156,10 @@
         // "json.schemas": [
 
         // ],
+        "[github-actions-workflow]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode",
+            "prettier.tabWidth": 2
+        },
 
 
     // SQL settings
