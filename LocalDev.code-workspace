@@ -42,7 +42,6 @@
             "pythonTerminalEnvVarActivation"
         ],
         // "python.useEnvironmentsExtension": true, // default: false // breaks "python.terminal.activateEnvironment": true,
-
         // "python.terminal.activateEnvironment": false,  // default: true
         // "python.terminal.activateEnvInCurrentTerminal": true,  // default: false
         "python.defaultInterpreterPath": "/opt/venv/bin/python",
