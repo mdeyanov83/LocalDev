@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+# force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -91,13 +91,11 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias avenv='source .venv/bin/activate'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Python venv activation alias
-alias avenv='source .venv/bin/activate'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -141,7 +139,7 @@ __bash_prompt() {
     unset -f __bash_prompt
 }
 __bash_prompt
-export PROMPT_DIRTRIM=2
+export PROMPT_DIRTRIM=1
 
 # Check if the terminal is xterm
 if [[ "$TERM" == "xterm" ]]; then
@@ -162,3 +160,6 @@ if [[ "$TERM" == "xterm" ]]; then
     # Append to PROMPT_COMMAND to call precmd before displaying the prompt
     PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND; }precmd"
 fi
+
+# If PostgreSQL is installed
+# export PATH="/usr/lib/postgresql/16/bin:$PATH"
