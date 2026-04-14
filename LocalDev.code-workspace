@@ -181,19 +181,35 @@
 
 
     // Dart/Flutter settings
-        // "dart.lineLength": 80,
-        // "[dart]": {
-        //     "editor.formatOnSave": true,
-        //     "editor.formatOnType": true,
-        //     "editor.rulers": [
-        //         80
-        //     ],
-        // },
-        // These were on
-        // "dart.previewFlutterUiGuides": true,  // Experimental
-        // "dart.previewFlutterUiGuidesCustomTracking": true,  // Experimental
-        // "dart.closingLabels": true,
+
+        "debug.internalConsoleOptions": "openOnSessionStart",  // recommended for Dart
+
+        "[dart]": {
+            "editor.formatOnSave": true,
+            "editor.formatOnType": true,
+            "editor.rulers": [
+                80
+            ],
+            "editor.selectionHighlight": false,  // default: true
+            "editor.tabCompletion": "onlySnippets",  // default: "off"
+            "editor.wordBasedSuggestions": "off",
+
+        },
+
+        "dart.analysisExcludedFolders": ["/workspaces/LocalDev/learning"],
+        "dart.lineLength": 80,
+        "dart.previewFlutterUiGuides": true,  // Experimental
+        "dart.previewFlutterUiGuidesCustomTracking": true,  // Experimental
+        // "dart.closingLabels": true,  // default: true
         // "dart.showMainCodeLens": true, // default: true
+
+        // Moved from User settings
+        // "dart.debugExternalPackageLibraries": false,  // default: false
+        // "dart.debugSdkLibraries": false,  // default: false
+        // "dart.devToolsLocation": {
+        //     "default": "beside",
+        //     "inspector": "beside"
+        // },
 
 
     // Language-specific preferences (other)
@@ -233,7 +249,7 @@
 
         // "editor.renderWhitespace": "selection", // default: "selection"
         "editor.stickyScroll.enabled": true,
-        // "editor.mouseWheelZoom": true, // default: true
+        // "editor.mouseWheelZoom": true, // default: false
         "editor.smoothScrolling": true,
         "editor.cursorBlinking": "smooth",
         // "editor.cursorStyle": "block-outline",
