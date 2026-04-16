@@ -9,9 +9,13 @@
             "path": "learning"
         },
         {
-            "name": "Current Project",
-            "path": "current_project"
+            "name": "Flutter Complete Guide",
+            "path": "flutter_complete"
         },
+        {
+            "name": "CS50 2D (Lua/Love2D)",
+            "path": "cs50_2d"
+        }
     ],
 
     "settings": {
@@ -42,7 +46,7 @@
             "pythonTerminalEnvVarActivation"
         ],
         // "python.useEnvironmentsExtension": true, // default: false // breaks "python.terminal.activateEnvironment": true,
-        // "python.terminal.activateEnvironment": false,  // default: true
+        "python.terminal.activateEnvironment": false,  // default: true
         // "python.terminal.activateEnvInCurrentTerminal": true,  // default: false
         "python.defaultInterpreterPath": "/opt/venv/bin/python",
 
@@ -196,12 +200,16 @@
 
         },
 
-        "dart.analysisExcludedFolders": ["/workspaces/LocalDev/learning"],
+        "dart.analysisExcludedFolders": [
+            "/workspaces/LocalDev/learning",
+            "/workspaces/LocalDev/flutter_complete/flutter-complete-source",
+        ],
         "dart.lineLength": 80,
         "dart.previewFlutterUiGuides": true,  // Experimental
         "dart.previewFlutterUiGuidesCustomTracking": true,  // Experimental
         // "dart.closingLabels": true,  // default: true
         // "dart.showMainCodeLens": true, // default: true
+
 
         // Moved from User settings
         // "dart.debugExternalPackageLibraries": false,  // default: false
