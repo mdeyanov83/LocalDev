@@ -219,6 +219,15 @@
         //     "inspector": "beside"
         // },
 
+    // Lua / Love2D
+        "json.schemaDownload.trustedDomains": {
+            "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json": true
+        },
+
+        // "pixelbyte.love2d.path" : "C:\\Users\\mdeya\\Desktop\\Love2D\\love.exe",
+        // "pixelbyte.love2d.saveOnRun" : true,
+        // "pixelbyte.love2d.srcDir" : "src",
+
 
     // Language-specific preferences (other)
 
@@ -428,6 +437,7 @@
         "cSpell.words": [
 
         ],
+
 
 
     // Temporary pytest configuration for current project
