@@ -2,7 +2,7 @@
     "folders": [
         {
             "name": "ROOT (Config)",
-            "path": ".",
+            "path": "."
         },
         {
             "name": "Learning",
@@ -67,10 +67,11 @@
             "**/site-packages",
             "**/.venv",
             "**/build",
-            "**/dist"
+            "**/dist",
+            "/workspaces/LocalDev/learning/**"
         ],
         "python.analysis.ignore": ["*"], // let Ruff handle errors
-        "python.analysis.userFileIndexingLimit": 2000, // default: 200 (Set the analysis limit - helps with CPU spikes)
+        "python.analysis.userFileIndexingLimit": 500, // default: 200 (Set the analysis limit - helps with CPU spikes)
         "python.analysis.diagnosticMode":   "openFilesOnly", // default: "openFilesOnly" (Change the "diagnostic" mode to only analyze open files)
 
         "ruff.enable": true,
